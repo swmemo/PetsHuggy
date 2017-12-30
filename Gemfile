@@ -16,6 +16,7 @@ gem 'devise'
 gem 'toastr-rails'
 gem 'omniauth-facebook'
 gem "paperclip", "~> 5.0.0"
+gem 'dropzonejs-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
