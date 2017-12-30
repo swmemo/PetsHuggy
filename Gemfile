@@ -18,6 +18,7 @@ gem "paperclip", "~> 5.0.0"
 gem 'dropzonejs-rails'
 gem "figaro", "~> 1.1.0"
 gem 'aws-sdk', '~> 2.3'
+gem 'geocoder'
 
 group :production do 
 	gem 'pg'

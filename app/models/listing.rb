@@ -7,4 +7,8 @@ class Listing < ActiveRecord::Base
   validates :pet_type, presence: true
   validates :pet_size, presence: true
   validates :breeding_years, presence: true
+  
+  geocoded_by :address   # can also be an IP address
+  after_validation :geocode, :if => :address_changed?
+
 end
