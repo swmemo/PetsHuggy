@@ -1,4 +1,12 @@
 class ReservationsController < ApplicationController
+
+  def index
+    @reservations = current_user.reservations.where(self_booking: nil) 
+  end
+
+  def reserved
+    @listings = current_user.listings
+  end
   
   def create
     @listing = Listing.find(params[:listing_id])
@@ -30,7 +38,7 @@ class ReservationsController < ApplicationController
       #新しい日付の予約をクリエイトする
       if selectedDates
         selectedDates.each do |date|
-          current_user.reservations.create(:listing_id => @listing.id,:start_date => date,:end_date => date)
+          current_user.reservations.create(:listing_id => @listing.id,:start_date => date,:end_date => date,:self_booking => true)
         end
       end
       
